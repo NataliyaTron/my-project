@@ -3,12 +3,11 @@ import type {RootState} from "../components/slices/store";
 import {useSelector, useDispatch} from "react-redux";
 import { decrement, increment, incrementByAmount} from "../components/slices/counterSlice";
 
-export default () => {
+const CounterPage = () => {
     const count = useSelector((state: RootState) => state.counter.value);
     const dispatch = useDispatch();
 
-    return
-        (
+    return (
           <div >
             <div>
                 <button aria-label="Increment value" onClick={() => dispatch(increment())}>Прибавить</button>
@@ -20,4 +19,6 @@ export default () => {
          </div>
         )
 }
+
+export default CounterPage;
 
